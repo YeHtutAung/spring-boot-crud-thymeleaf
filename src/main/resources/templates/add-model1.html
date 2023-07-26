@@ -1,0 +1,9 @@
+<form action="#" th:action="@{/addmodel1}" th:object="${model1}" method="post">
+    <label for="field1">Field1</label>
+    <input type="text" th:field="*{field1}" id="field1" placeholder="field1">
+    <span th:if="${#fields.hasErrors('field1')}" th:errors="*{field1}"></span>
+    <label for="field2">Field2</label>
+    <input type="text" th:field="*{field2}" id="field2" placeholder="field2">
+    <span th:if="${#fields.hasErrors('field2')}" th:errors="*{field2}"></span>
+    <input type="submit" value="Add Model1">   
+</form>

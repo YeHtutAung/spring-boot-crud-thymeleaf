@@ -17,6 +17,12 @@ public class Model1Controller {
 	@Autowired
 	Model1Service model1Service;
 
+	
+	@GetMapping("/signup")
+    public String showAddModel1Form(Model1 model1) {
+        return "add-model1";
+    }
+	
 	@PostMapping("/addmodel1")
 	public String addModel1(@Valid Model1 model1, BindingResult result, Model model) {
 		if (result.hasErrors()) {
@@ -28,7 +34,7 @@ public class Model1Controller {
 	}
 
 	@GetMapping("/index")
-	public String showUserList(Model model) {
+	public String showModel1List(Model model) {
 		model.addAttribute("model1s", model1Service.getAll());
 		return "index";
 	}
